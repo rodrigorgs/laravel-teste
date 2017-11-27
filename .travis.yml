@@ -4,6 +4,7 @@ php:
   - "7.1"
 
 before_script:
+  - sudo apt-get install -y sshpass
   - cp .env.travis .env
   - composer install --no-interaction
   - php artisan key:generate
