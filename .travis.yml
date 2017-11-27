@@ -4,8 +4,12 @@ php:
   - "7.1"
 
 before_script:
+  - cp .env.travis .env
   - composer install --no-interaction
   - php artisan key:generate
+
+script:
+  - vendor/bin/phpunit
 
 deploy:
   provider: script
