@@ -1,6 +1,6 @@
 @extends('home.app')
 @section('main')
     <div class="title m-b-md">
-        Testando!
+        Testando deploy!
     </div>
 @endsection
