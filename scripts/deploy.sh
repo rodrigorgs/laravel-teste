@@ -5,12 +5,19 @@
 # RSYNC_PASSWORD
 # SSH_PORT
 # APP_ENV (production, testing...)
+# GIT_CRYPT_BASE64_KEY
 
 APP_ENV=${APP_ENV:-production}
 TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR:-.}
 
+# Unlock using git-crypt
+cd $TRAVIS_BUILD_DIR/
+echo "$GIT_CRYPT_BASE64_KEY" | base64 --decode | git-crypt unlock -
+
+# Copy files to server
 sshpass -p "$RSYNC_PASSWORD" rsync -e "ssh -p $SSH_PORT -o StrictHostKeyChecking=no" -z -r --delete-after --exclude '.git*' --quiet $TRAVIS_BUILD_DIR/ $SERVER_USER@$SERVER_NAME:./tmp-laravel-teste
 
+# Run commands on server
 sshpass -p "$RSYNC_PASSWORD" ssh -p $SSH_PORT $SERVER_USER@$SERVER_NAME /bin/bash << EOF
   # Use the correct .env file
   mv ~/tmp-laravel-teste/.env.$APP_ENV ~/tmp-laravel-teste/.env
