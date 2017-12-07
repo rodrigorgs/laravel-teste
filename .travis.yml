@@ -4,7 +4,8 @@ php:
   - "7.1"
 
 before_script:
-  - sudo apt-get install -y sshpass git-crypt
+  - sudo apt-get install -y sshpass
+  - git clone https://www.agwa.name/git/git-crypt.git && cd git-crypt && make && make install
   - cp .env.travis .env
   - composer install --no-interaction
   - php artisan key:generate
