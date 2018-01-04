@@ -11,6 +11,11 @@ export GIT_PROJECT_NAME=colegiado
 # Esse container já vem com o PHP e o Laravel instalados, no entanto
 # são versões antigas. Instalaremos versões mais novas.
 
+# Configura o locale
+
+sudo locale-gen pt_BR.UTF-8
+sudo update-locale LANG=pt_BR.UTF-8
+
 # Instala comando add-apt-repository
 sudo apt-get update
 sudo apt-get install -y software-properties-common python-software-properties
