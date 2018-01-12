@@ -3,7 +3,7 @@
 @section('content')
     <div class='row'>
         <div class='col-md-12'>
-            <form role="form">
+            <form role="form" action="{{ url('teacher') }}" method="POST">
                 <div class="box-body">
                     <div class="form-group">
                         <label for="user_ufba">Nome de usuário UFBA</label>

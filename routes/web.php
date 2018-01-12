@@ -23,4 +23,5 @@ Route::get('admin', function () {
 });
 
 Route::get('teacher/create', 'TeacherController@create');
+Route::resource('teacher', 'TeacherController');
 

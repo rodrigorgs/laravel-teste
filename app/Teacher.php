@@ -15,11 +15,21 @@ class Teacher extends Model
 
     protected $primaryKey = 'id';
 
-
     /**
-     * Indicates if the model should be timestamped.
+     * The attributes that are mass assignable.
      *
-     * @var bool
+     * @var array
      */
-    public $timestamps = true;
+    protected $fillable = [
+        'name',
+        'user_ufba',
+        'collegiates'
+    ];
+
+
+    protected $hidden = [
+        'updated_at',
+        'created_at'
+    ];
+
 }
