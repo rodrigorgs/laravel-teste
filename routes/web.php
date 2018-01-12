@@ -18,3 +18,9 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index');
 Route::resource('filmes', 'FilmeController');
 
+Route::get('admin', function () {
+    return view('admin_template');
+});
+
+Route::get('teacher/create', 'TeacherController@create');
+
