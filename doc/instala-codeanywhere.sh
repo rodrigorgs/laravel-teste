@@ -37,6 +37,7 @@ sudo service apache2 restart
 
 # Projeto
 
+cd
 rm -rf workspace
 git clone $GIT_PROJECT
 ln -s $GIT_PROJECT_NAME workspace
@@ -50,6 +51,9 @@ echo >> .env
 echo DB_DATABASE=forge >> .env
 echo DB_USERNAME=root >> .env
 echo DB_PASSWORD= >> .env
+
+php artisan key:generate
+php artisan config:clear
 
 # Ao final, clique com o botão direito na conexão e clique em Restart
 
