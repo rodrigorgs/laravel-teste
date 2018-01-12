@@ -9,7 +9,7 @@
 # Modifique as variáveis de ambiente de acordo com o seu projeto:
 
 export SAMPLE_ENV_FILE=.env.travis
-export GIT_PROJECT="https://github.com/ufbafacil/colegiado.git" .
+export GIT_PROJECT="https://github.com/ufbafacil/colegiado.git"
 export GIT_PROJECT_NAME=colegiado
 
 # Abra o editor do CodeAnywhere.
@@ -43,6 +43,7 @@ sudo service apache2 restart
 
 # Projeto
 
+cd
 rm -rf workspace
 git clone $GIT_PROJECT
 ln -s $GIT_PROJECT_NAME workspace
