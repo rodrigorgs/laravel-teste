@@ -1,9 +1,15 @@
 #!/bin/bash
 
+# 1. Entre na pasta workspace
+# 2. Remova todos os arquivos (rm -rf *)
+# 3. Execute `ls -la` e certifique-se de que não existe arquivo algum
+# 4. Execute este arquivo `bash instala-codeanywhere.sh`
+
+
 # Modifique as variáveis de ambiente de acordo com o seu projeto:
 
 export SAMPLE_ENV_FILE=.env.travis
-export GIT_PROJECT="https://github.com/ufbafacil/colegiado.git"
+export GIT_PROJECT="https://github.com/ufbafacil/colegiado.git" .
 export GIT_PROJECT_NAME=colegiado
 
 # Abra o editor do CodeAnywhere.
@@ -50,6 +56,9 @@ echo >> .env
 echo DB_DATABASE=forge >> .env
 echo DB_USERNAME=root >> .env
 echo DB_PASSWORD= >> .env
+
+php artisan key:generate
+php artisan config:clear
 
 # Ao final, clique com o botão direito na conexão e clique em Restart
 
