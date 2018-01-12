@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# 1. Entre na pasta workspace
-# 2. Remova todos os arquivos (rm -rf *)
-# 3. Execute `ls -la` e certifique-se de que não existe arquivo algum
-# 4. Execute este arquivo `bash instala-codeanywhere.sh`
-
-
 # Modifique as variáveis de ambiente de acordo com o seu projeto:
 
 export SAMPLE_ENV_FILE=.env.travis
