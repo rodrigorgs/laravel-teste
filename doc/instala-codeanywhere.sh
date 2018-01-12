@@ -3,7 +3,7 @@
 # Modifique as variáveis de ambiente de acordo com o seu projeto:
 
 export SAMPLE_ENV_FILE=.env.travis
-export GIT_PROJECT="https://github.com/ufba-facil/colegiado.git"
+export GIT_PROJECT="https://github.com/ufbafacil/colegiado.git"
 export GIT_PROJECT_NAME=colegiado
 
 # Abra o editor do CodeAnywhere.
