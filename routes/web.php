@@ -19,8 +19,10 @@ Route::get('/home', 'HomeController@index');
 Route::resource('filmes', 'FilmeController');
 
 Route::get('admin', function () {
-    return view('admin_template');
+    $data['page_title'] = 'Bem vindo!';
+    return view('admin_template')->with($data);
 });
 
 Route::get('teacher/create', 'TeacherController@create');
+Route::resource('teacher', 'TeacherController');
 
