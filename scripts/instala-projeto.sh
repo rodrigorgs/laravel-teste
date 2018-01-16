@@ -4,9 +4,9 @@
 # Para configurar o ambiente, use o script
 # instala-codeanywhere.sh
 
-export SAMPLE_ENV_FILE=.env.travis
-export GIT_PROJECT="https://github.com/ufbafacil/colegiado.git"
-export GIT_PROJECT_NAME=colegiado
+export SAMPLE_ENV_FILE="${SAMPLE_ENV_FILE:=.env.travis}"
+export GIT_PROJECT="${GIT_PROJECT:=https://github.com/ufbafacil/colegiado.git}"
+export GIT_PROJECT_NAME="${GIT_PROJECT_NAME:=colegiado}"
 
 cd
 rm -rf workspace
