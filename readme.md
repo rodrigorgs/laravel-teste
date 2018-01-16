@@ -13,7 +13,22 @@ Este software será desenvolvido utilizando tecnologias Web (PHP, HTML, CSS e Ja
 ## Quem pode editar este repositório?
  
 Alunos da disciplina de Linguagens para Aplicações Comerciais do semestre 2017.1.
+
+## Configuração do ambiente (CodeAnywhere)
+
+Abra o editor do CodeAnywhere.
+Escolha `File` > `New Connection` > `Container` > `Laravel 5 (Ubuntu 14.04)`.
+Esse container já vem com o PHP e o Laravel instalados, no entanto
+são versões antigas. Instalaremos versões mais novas. Para isso, abra o Terminal e digite os seguintes comandos:
   
+```bash
+cd
+/bin/bash -c "$(curl -L https://raw.githubusercontent.com/ufbafacil/colegiado/master/scripts/instala-codeanywhere.sh)"
+/bin/bash -c "$(curl -L https://raw.githubusercontent.com/ufbafacil/colegiado/master/scripts/instala-projeto.sh)"
+```
+
+Atenção: o último comando apaga o diretório `workspace` e substitui pelo conteúdo deste repositório.
+
 ## Links auxiliares
  
 * [Trello do projeto](https://trello.com/b/ydTDkJfZ/lac-colegiado)
