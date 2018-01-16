@@ -4,17 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Teacher;
 use Illuminate\Http\Request;
+use PhpParser\ErrorHandler\ThrowingTest;
 
 class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        //
+       $data['teachers'] = Teacher::all()->toArray();
+        return view('teacher.index')->with($data);
     }
 
     /**
@@ -24,19 +26,26 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        $data['page_title'] = 'Cadastrar usuário - Professor';
-        return view('teacher.create_edit')->with($data);
+        return view('teacher.create_edit');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        print_r($request->all());die;
+        $data = $request->all();
+        $teacher = new Teacher();
+
+        $teacher = $teacher->fill($data)->toArray();
+
+        $response = Teacher::create($teacher)->toArray();
+
+        return view('teacher.create_edit')->with($response);
+
     }
 
     /**
