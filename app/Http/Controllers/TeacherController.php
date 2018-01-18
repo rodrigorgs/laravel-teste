@@ -15,7 +15,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-       $data['teachers'] = Teacher::all()->toArray();
+        $data['teachers'] = Teacher::all()->toArray();
         return view('teacher.index')->with($data);
     }
 
@@ -32,7 +32,7 @@ class TeacherController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function store(Request $request)
@@ -50,19 +50,20 @@ class TeacherController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Teacher  $teacher
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @internal param Teacher $teacher
      */
-    public function show(Teacher $teacher)
+    public function show($id)
     {
-        //
+        $teacher = Teacher::find($id)->toArray();
+
+        return view('teacher.create_edit')->with($teacher);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Teacher  $teacher
+     * @param  \App\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
     public function edit(Teacher $teacher)
@@ -73,8 +74,8 @@ class TeacherController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Teacher  $teacher
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Teacher $teacher)
@@ -85,10 +86,10 @@ class TeacherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Teacher  $teacher
+     * @param  \App\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teacher $teacher)
+    public function destroy($id)
     {
         //
     }
