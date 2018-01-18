@@ -87,10 +87,14 @@ class TeacherController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Teacher $teacher
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function destroy($id)
     {
-        //
+        $teacher = Teacher::where('id', '=', $id)->delete();
+
+        $data['teachers'] = Teacher::all()->toArray();
+        return view('teacher.index')->with($data);
+
     }
 }

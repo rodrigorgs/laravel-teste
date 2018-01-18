@@ -23,6 +23,6 @@ Route::get('admin', function () {
     return view('admin_template')->with($data);
 });
 
-Route::get('teacher/destroy', 'TeacherController@destroy');
+Route::get('teacher/destroy/{id}', 'TeacherController@destroy');
 Route::resource('teacher', 'TeacherController');
 
