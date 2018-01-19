@@ -17,6 +17,7 @@ composer install
 sudo chmod -R 777 storage
 
 cp $SAMPLE_ENV_FILE .env
+sed -i 's/DB_CONNECTION=testing/DB_CONNECTION=mysql/' .env
 echo >> .env
 echo DB_DATABASE=forge >> .env
 echo DB_USERNAME=root >> .env
