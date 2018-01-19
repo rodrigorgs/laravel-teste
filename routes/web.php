@@ -26,3 +26,6 @@ Route::get('admin', function () {
 Route::get('teacher/destroy/{id}', 'TeacherController@destroy');
 Route::resource('teacher', 'TeacherController');
 
+Route::get('/mail', 'MailController@index');
+Route::get('/mail/enviar', 'MailController@enviarEmail');
+
