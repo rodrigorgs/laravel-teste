@@ -2,10 +2,6 @@
 
 # Modifique as variáveis de ambiente de acordo com o seu projeto:
 
-export SAMPLE_ENV_FILE=.env.travis
-export GIT_PROJECT="https://github.com/ufbafacil/colegiado.git"
-export GIT_PROJECT_NAME=colegiado
-
 # Abra o editor do CodeAnywhere.
 # Escolha File > New Connection > Container > Laravel 5 (Ubuntu 14.04).
 # Esse container já vem com o PHP e o Laravel instalados, no entanto
@@ -34,26 +30,3 @@ sudo /usr/local/bin/composer self-update
 sudo a2dismod php5
 sudo a2enmod php7.0
 sudo service apache2 restart
-
-# Projeto
-
-cd
-rm -rf workspace
-git clone $GIT_PROJECT
-ln -s $GIT_PROJECT_NAME workspace
-
-cd workspace
-composer install
-sudo chmod -R 777 storage
-
-cp $SAMPLE_ENV_FILE .env
-echo >> .env
-echo DB_DATABASE=forge >> .env
-echo DB_USERNAME=root >> .env
-echo DB_PASSWORD= >> .env
-
-php artisan key:generate
-php artisan config:clear
-
-# Ao final, clique com o botão direito na conexão e clique em Restart
-
