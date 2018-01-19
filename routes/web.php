@@ -21,6 +21,8 @@ Route::resource('filmes', 'FilmeController');
 Route::get('admin', function () {
     return view('admin_template');
 });
-
 Route::get('teacher/create', 'TeacherController@create');
+Route::get('reuniao/colegiado/index', 'ReuniaoColegiadoController@index');
+Route::post('reuniao/colegiado/buscar', 'ReuniaoColegiadoController@buscarReuniao');
+Route::get('reuniao/colegiado/cadastro', 'ReuniaoColegiadoController@exibirCadastro');
 

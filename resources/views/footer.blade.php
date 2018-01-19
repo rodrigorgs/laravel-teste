@@ -4,5 +4,5 @@
         Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright © 2015 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright © 2018 <a href="#">Universidade Federal da Bahia</a>.</strong> All rights reserved.
 </footer>
