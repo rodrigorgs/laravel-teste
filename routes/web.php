@@ -29,7 +29,8 @@ Route::get('reuniao/colegiado/index', 'ReuniaoColegiadoController@index');
 Route::post('reuniao/colegiado/buscar', 'ReuniaoColegiadoController@buscarReuniao');
 Route::get('reuniao/colegiado/cadastro', 'ReuniaoColegiadoController@exibirCadastro');
 
-
+Route::get('/itens','ItensController@MostrarView');
+Route::post('/itens/cadastrar', 'ItensController@cadastrar');
 
 Route::get('/mail', 'MailController@index');
 Route::get('/mail/enviar', 'MailController@enviarEmail');
