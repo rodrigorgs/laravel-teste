@@ -39,7 +39,7 @@
             <li class="treeview">
                 <a href="{{url('teacher/create')}}"><span>Cadastrar usuário - professor</span></a></li>
             <li class="treeview">
-                <a href=""><span>Cadastrar regra de aproveitamento</span></a></li>
+                <a href="/Itens"><span>Cadastrar regra de aproveitamento</span></a></li>
             <li class="treeview">
                 <a href=""><span>Cadastrar item de aproveitamento</span></a></li>
             <li class="treeview">
