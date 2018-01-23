@@ -22,8 +22,7 @@ class CreateCoursesDisciplinesTable extends Migration
             $table->integer('course_id')->unsigned()->default(null);
             $table->integer('discipline_id')->default(null);
 
-            $table->foreign('course_id')->references('id')->on('courses');
-            $table->foreign('discipline_id')->references('id')->on('disciplines');
+
 
             $table->timestamps();
 

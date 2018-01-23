@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\ItensDispensa;
 use Illuminate\Http\Request;
 use DB;
 use App\Itens;
 
 class ItensController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function cadastrar(Request $request)
     {
-
         $get_discpl = DB::table('disciplines')->select('id','name', 'code', 'load')
             ->where('name', '=', [$request->atvc])
             ->where('load', '=', [$request->ch])->get();
@@ -27,4 +31,16 @@ class ItensController extends Controller
     public function MostrarView(){
         return view('Itens.itens');
     }
+
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        $itensdispensa = new ItensDispensa();
+        $itensdispensa = $itensdispensa->fill($data)->toArray();
+        $response = ItensDispensa::create($itensdispensa)->toArray();
+        return view('Itens.itens')->with($response);
+
+    }
 }
+
