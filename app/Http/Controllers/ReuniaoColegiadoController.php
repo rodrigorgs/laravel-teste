@@ -85,7 +85,7 @@ class ReuniaoColegiadoController extends Controller
      * @param  \App\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teacher $teacher)
+    public function salvar(Teacher $teacher)
     {
         //
     }

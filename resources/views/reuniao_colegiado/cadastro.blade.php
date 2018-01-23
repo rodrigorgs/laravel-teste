@@ -39,7 +39,10 @@
 @section('content')
     <div class='row'>
         <div class='col-md-12'>
-            <form id = "formulario" role="form">
+          <form id = "formulario" action="reuniao/colegiado/salvar" method="post">
+            <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+
+            {{--<form id = "formulario" role="form">--}}
                 {{ csrf_field() }}
                 <div class="box-body">
                     <div class="form-group">
