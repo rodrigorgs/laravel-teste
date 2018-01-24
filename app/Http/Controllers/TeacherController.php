@@ -44,7 +44,6 @@ class TeacherController extends Controller
 
         $response = Teacher::create($teacher)->toArray();
 
-        //return view('teacher.create_edit')->with($response);
         $data['teachers'] = Teacher::all()->toArray();
         return view('teacher.index')->with($data);
 
@@ -77,11 +76,20 @@ class TeacherController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function update(Request $request)
     {
-        print_r($request->all());die;
+        $data = $request->all();
+
+        $teacher = new Teacher();
+        $teacher = $teacher->fill($data);
+
+        $teacher = Teacher::where('id', '=', $teacher->id)
+            ->update($teacher->toArray());
+
+        $data['teachers'] = Teacher::all()->toArray();
+        return view('teacher.index')->with($data);
     }
 
     /**
