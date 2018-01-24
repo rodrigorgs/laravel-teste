@@ -31,6 +31,9 @@
         <ul class="sidebar-menu">
             <li class="header"></li>
             <!-- Optionally, you can add icons to the links -->
+            <li class="active"><a href="/teacher/create"><span>Cadastrar usuário - professor</span></a></li>
+          <li class="active"><a href="/reuniao/colegiado/index"><span>Reunião Colegiado</span></a></li>
+            <li><a href="#"><span>Another Link</span></a></li>
             <li class="treeview">
                 <a href="{{url('teacher')}}"><span>Lista de professores</span></a></li></li>
             <li class="treeview">
@@ -38,11 +41,11 @@
             <li class="treeview">
                 <a href=""><span>Cadastrar regra de aproveitamento</span></a></li>
             <li class="treeview">
-                <a href=""><span>Cadastrar item de aproveitamento</span></a></li>
+                <a href="{{url('itens')}}"><span>Cadastrar item de aproveitamento</span></a></li>
             <li class="treeview">
                 <a href=""><span>Cadastrar processo</span></a></li>
             <li class="treeview">
-                <a href=""><span>Cadastrar reunião de colegiado</span></a></li>
+                <a href="{{url('reuniao/colegiado/index')}}">Cadastrar reunião de colegiado</span></a></li>
             {{--<li><a href="#"><span>Another Link</span></a></li>--}}
             {{--<li class="treeview">--}}
                 {{--<a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>--}}
