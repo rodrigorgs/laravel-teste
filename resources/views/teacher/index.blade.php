@@ -43,7 +43,7 @@
                                     <td>{{$teacher['collegiates']}}</td>
                                     <td class="text-right">
                                         <a class="btn btn-xs btn-primary" href="{{ url('teacher', $teacher['id']) }}" ><i class="glyphicon glyphicon-eye-open"></i> Editar</a>
-                                        <a class="btn btn-xs btn-danger" href="{{ url('teacher/destroy', $teacher['id']) }}"><i class="glyphicon glyphicon-trash"></i> Excluir</a>
+                                        <a class="btn btn-xs btn-danger" href="{{ url('teacher', $teacher['id'], 'edit') }}"><i class="glyphicon glyphicon-trash"></i> Excluir</a>
                                         {{--<form action="{{ url('departments/destroy', $department->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">--}}
                                             {{--<input type="hidden" name="_method" value="DELETE">--}}
                                             {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}

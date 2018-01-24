@@ -44,7 +44,9 @@ class TeacherController extends Controller
 
         $response = Teacher::create($teacher)->toArray();
 
-        return view('teacher.create_edit')->with($response);
+        //return view('teacher.create_edit')->with($response);
+        $data['teachers'] = Teacher::all()->toArray();
+        return view('teacher.index')->with($data);
 
     }
 
@@ -66,7 +68,7 @@ class TeacherController extends Controller
      * @param  \App\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teacher $teacher)
+    public function edit($id)
     {
         //
     }
@@ -75,12 +77,11 @@ class TeacherController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \App\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teacher $teacher)
+    public function update(Request $request)
     {
-        //
+        print_r($request->all());die;
     }
 
     /**
