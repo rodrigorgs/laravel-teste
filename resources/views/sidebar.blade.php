@@ -43,7 +43,7 @@
             <li class="treeview">
                 <a href="{{url('itens')}}"><span>Cadastrar item de aproveitamento</span></a></li>
             <li class="treeview">
-                <a href=""><span>Cadastrar processo</span></a></li>
+                <a href="{{url('process')}}"><span>Processos</span></a></li>
             <li class="treeview">
                 <a href="{{url('reuniao/colegiado/index')}}">Cadastrar reunião de colegiado</span></a></li>
             {{--<li><a href="#"><span>Another Link</span></a></li>--}}
