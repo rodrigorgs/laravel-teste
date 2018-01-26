@@ -44,7 +44,8 @@ class ProcessController extends Controller
 
         $response = Process::create($process)->toArray();
 
-        return view('process.index')->with($response);
+        $data['processes'] = Process::all()->toArray();
+        return view('process.index')->with($data);
 
     }
 

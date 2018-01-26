@@ -22,7 +22,6 @@
                                 <th>Curso</th>
                                 <th>Curriculum</th>
                                 <th>Referência</th>
-                                <th>Criado em</th>
                                 <th></th>
                             </tr>
                           
@@ -33,7 +32,6 @@
                                     <td>{{$process['course']}}</td>
                                     <td>{{$process['curriculum']}}</td>
                                     <td>{{$process['reference']}}</td>
-                                    <td>{{$process['createdAt']}}</td>
 
                                   <td class="text-right">
                                         <a class="btn btn-xs btn-primary" href="{{ url('process', $process['id']) }}" ><i class="glyphicon glyphicon-eye-open"></i> Editar</a>
