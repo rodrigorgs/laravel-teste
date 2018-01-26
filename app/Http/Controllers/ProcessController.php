@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Teacher;
+use App\Process;
 use Illuminate\Http\Request;
 use PhpParser\ErrorHandler\ThrowingTest;
 
-class TeacherController extends Controller
+class ProcessController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $data['teachers'] = Teacher::all()->toArray();
-        return view('teacher.index')->with($data);
+        $data['processes'] = Process::all()->toArray();
+        return view('process.index')->with($data);
     }
 
     /**
@@ -26,7 +26,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('teacher.create_edit');
+        return view('process.create_edit');
     }
 
     /**
@@ -38,36 +38,35 @@ class TeacherController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $teacher = new Teacher();
+        $process = new Process();
 
-        $teacher = $teacher->fill($data)->toArray();
+        $process = $process->fill($data)->toArray();
 
-        $response = Teacher::create($teacher)->toArray();
+        $response = Process::create($process)->toArray();
 
-        $data['teachers'] = Teacher::all()->toArray();
-        return view('teacher.index')->with($data);
+        return view('process.index')->with($response);
 
     }
 
     /**
      * Display the specified resource.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * @internal param Teacher $teacher
+     * @internal param Process $process
      */
     public function show($id)
     {
-        $teacher = Teacher::find($id)->toArray();
+        $process = Process::find($id)->toArray();
 
-        return view('teacher.create_edit')->with($teacher);
+        return view('process.create_edit')->with($process);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Teacher $teacher
+     * @param  \App\Process $process
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Process $process)
     {
         //
     }
@@ -76,34 +75,26 @@ class TeacherController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param  \App\Process $process
+     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, Process $process)
     {
-        $data = $request->all();
-
-        $teacher = new Teacher();
-        $teacher = $teacher->fill($data);
-
-        $teacher = Teacher::where('id', '=', $teacher->id)
-            ->update($teacher->toArray());
-
-        $data['teachers'] = Teacher::all()->toArray();
-        return view('teacher.index')->with($data);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Teacher $teacher
+     * @param  \App\Process $process
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function destroy($id)
     {
-        $teacher = Teacher::where('id', '=', $id)->delete();
+        $process = Process::where('id', '=', $id)->delete();
 
-        $data['teachers'] = Teacher::all()->toArray();
-        return view('teacher.index')->with($data);
+        $data['processes'] = Process::all()->toArray();
+        return view('process.index')->with($data);
 
     }
 }

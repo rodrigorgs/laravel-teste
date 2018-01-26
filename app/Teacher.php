@@ -21,6 +21,7 @@ class Teacher extends Model
      * @var array
      */
     protected $fillable = [
+        'id',
         'name',
         'user_ufba',
         'collegiates'
