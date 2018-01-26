@@ -26,6 +26,7 @@ Route::get('admin', function () {
 Route::get('teacher/destroy/{id}', 'TeacherController@destroy');
 Route::post('teacher/update', 'TeacherController@update');
 Route::resource('teacher', 'TeacherController');
+Route::resource('process', 'ProcessController');
 
 Route::get('reuniao/colegiado/index', 'ReuniaoColegiadoController@index');
 Route::post('reuniao/colegiado/buscar', 'ReuniaoColegiadoController@buscarReuniao');
