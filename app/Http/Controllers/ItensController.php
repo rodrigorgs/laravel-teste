@@ -29,7 +29,7 @@ class ItensController extends Controller
             compact("get_discpl", "get_natureza"));
     }
     public function MostrarView(){
-        return view('Itens.itens');
+        return view('Itens.Itens');
     }
 
 
