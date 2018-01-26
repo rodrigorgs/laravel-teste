@@ -15,10 +15,8 @@ class PhpCasAuthenticationController extends Controller
     public function index()
     {         
       if (phpCAS::isAuthenticated())
-      {
-         echo "Usuário: " . phpCAS::getUser();   
-         echo "<p><a href="."/logout".">Logout</a></p>";
-         echo "<p><a href="."/".">Inicio</a></p>";
+      {         
+        return view('phpcas');        
       }
       else{
         PhpCasAuthenticationController::login();
