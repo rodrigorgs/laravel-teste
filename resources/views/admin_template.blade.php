@@ -63,10 +63,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     </div><!-- /.content-wrapper -->
 
-    <!-- Footer -->
+    
+  <!-- ./wrapper -->
+  </div>
+  <!-- Footer -->
     @include('footer')
 
-</div><!-- ./wrapper -->
+
 
 <!-- REQUIRED JS SCRIPTS -->
 
