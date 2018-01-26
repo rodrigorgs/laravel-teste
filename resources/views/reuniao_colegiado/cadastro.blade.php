@@ -46,7 +46,7 @@
                 {{ csrf_field() }}
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="user_ufba">Data da Reunião do Colegiado</label>
+                        <label for="user_ufba">Cadastro da Reunião do Colegiado</label>
                         <div class="input-group date">
                           <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
