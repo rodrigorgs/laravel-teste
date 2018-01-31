@@ -4,8 +4,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         {{--<h1>--}}
-            {{--Cadastrar usuário - Professor<br>--}}
-            {{--<small>Cadastro de usuário para um professor</small>--}}
+        {{--Cadastrar usuário - Professor<br>--}}
+        {{--<small>Cadastro de usuário para um professor</small>--}}
         {{--</h1>--}}
 
     </section>
@@ -18,12 +18,8 @@
                         <h3 class="box-title">Lista de professores</h3>
 
                         <div class="box-tools">
-                            <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control pull-right" placeholder="Pesquisar">
-
-                                <div class="input-group-btn">
-                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                </div>
+                            <div class="input-group input-group-sm">
+                                <a class="btn btn-xs btn-success" href="{{ url('teacher/create') }}" ><i class="glyphicon glyphicon-plus"></i> Criar novo</a>
                             </div>
                         </div>
                     </div>
@@ -45,9 +41,9 @@
                                         <a class="btn btn-xs btn-primary" href="{{ url('teacher', $teacher['id']) }}" ><i class="glyphicon glyphicon-eye-open"></i> Editar</a>
                                         <a class="btn btn-xs btn-danger" href="{{ url('teacher/destroy', $teacher['id']) }}"><i class="glyphicon glyphicon-trash"></i> Excluir</a>
                                         {{--<form action="{{ url('departments/destroy', $department->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">--}}
-                                            {{--<input type="hidden" name="_method" value="DELETE">--}}
-                                            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
-                                            {{--<button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</button>--}}
+                                        {{--<input type="hidden" name="_method" value="DELETE">--}}
+                                        {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+                                        {{--<button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</button>--}}
                                         {{--</form>--}}
                                     </td>
                                 </tr>

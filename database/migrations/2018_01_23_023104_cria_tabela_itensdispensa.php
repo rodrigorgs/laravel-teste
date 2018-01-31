@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDisciplinesTable extends Migration
+class CriaTabelaItensdispensa extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,13 @@ class CreateDisciplinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('disciplines', function(Blueprint $table) {
-            $table->engine = 'InnoDB';
-
+        Schema::create('itensdispensa', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code')->default(null);
-            $table->string('name')->default(null);
-            $table->string('curriculum')->default(null);
-            $table->integer('load')->default(null);
-
-
-
+            $table->string('codigo')->default(null);
+            $table->integer('cargahoraria')->default(null);
+            $table->string('natureza')->default(null);
+            $table->string('atividade')->default(null);
             $table->timestamps();
-
         });
     }
 
@@ -36,6 +30,6 @@ class CreateDisciplinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('disciplines');
+        Schema::dropIfExists('itensdispensa');
     }
 }

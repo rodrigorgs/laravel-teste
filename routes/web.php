@@ -22,15 +22,20 @@ Route::get('admin', function () {
     $data['page_title'] = 'Bem vindo!';
     return view('admin_template')->with($data);
 });
-Route::get('teacher/create', 'TeacherController@create');
+
 Route::get('teacher/destroy/{id}', 'TeacherController@destroy');
+Route::post('teacher/update', 'TeacherController@update');
 Route::resource('teacher', 'TeacherController');
+Route::resource('process', 'ProcessController');
+
 Route::get('reuniao/colegiado/index', 'ReuniaoColegiadoController@index');
 Route::post('reuniao/colegiado/buscar', 'ReuniaoColegiadoController@buscarReuniao');
 Route::get('reuniao/colegiado/cadastro', 'ReuniaoColegiadoController@exibirCadastro');
 Route::post('reuniao/colegiado/salvar', 'ReuniaoColegiadoController@salvar');
 
+Route::resource('itens', 'ItensController');
 Route::get('/itens','ItensController@MostrarView');
+Route::post('itens/store', 'ItensController@store');
 Route::post('/itens/cadastrar', 'ItensController@cadastrar');
 
 Route::get('/mail', 'MailController@index');
@@ -39,4 +44,6 @@ Route::get('/mail/enviar', 'MailController@enviarEmail');
 //phpCAS Autenticação
 Route::get('/login', 'PhpCasAuthenticationController@index');
 Route::get('/logout', 'PhpCasAuthenticationController@logoutfunction');
+
+
 

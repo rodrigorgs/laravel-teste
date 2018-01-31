@@ -7,7 +7,7 @@
 
     <div class="container">
         </form>
-        <form class="col-md-6" action="{{url('')}}" method="post" >
+        <form class="col-md-6" action="{{url('/itens/store')}}" method="post" >
             {{csrf_field()}}
             <br>
             <div class="row" >
@@ -16,18 +16,18 @@
                     @foreach($get_discpl as $item)
 
                     <label style="margin-bottom: 40px"  class="control-label" >Atividade Dispensada:</label>
-                    <input style="margin-bottom: 40px" align="center" name="atvd" class="form-controll" value="{{$item->name}}">
+                    <input style="margin-bottom: 40px" align="center" name="atividade" class="form-controll" value="{{$item->name}}">
                     <div class="container">
                         <label style="margin-bottom: 40px"  class="control-label">Codigo:</label>
-                        <input style="margin-bottom: 40px" align="center" name="cod" class="form-controll"  value="{{$item->code}}" >
+                        <input style="margin-bottom: 40px" align="center" name="codigo" class="form-controll"  value="{{$item->code}}" >
                     </div>
                     <div class="container">
                         <label style="margin-bottom: 40px"  class="control-label">Carga Horaria:</label>
-                        <input style="margin-bottom: 40px" align="center" name="chd" class="form-controll" value="{{$item->load}}">
+                        <input style="margin-bottom: 40px" align="center" name="cargahoraria" class="form-controll" value="{{$item->load}}">
                     </div>
                     <div class="container">
                         <label style="margin-bottom: 40px"  class="control-label">Natureza:</label>
-                        <input style="margin-bottom: 40px" align="center" name="natrz" class="form-controll" value="{{$get_natureza[0]->nature}}" >
+                        <input style="margin-bottom: 40px" align="center" name="natureza" class="form-controll" value="{{$get_natureza[0]->nature}}" >
                     </div>
 
                         @endforeach
