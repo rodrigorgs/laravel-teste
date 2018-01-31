@@ -20,9 +20,10 @@ class CreateCoursesDisciplinesTable extends Migration
             $table->integer('semester')->default(null);
             $table->string('nature')->default(null);
             $table->integer('course_id')->unsigned()->default(null);
-            $table->integer('discipline_id')->default(null);
+            $table->integer('discipline_id')->unsigned()->default(null);
 
-
+            //$table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            //$table->foreign('discipline_id')->references('id')->on('disciplines')->onDelete('cascade');
 
             $table->timestamps();
 
