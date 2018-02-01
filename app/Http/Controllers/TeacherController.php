@@ -42,6 +42,14 @@ class TeacherController extends Controller
 
         $teacher = $teacher->fill($data)->toArray();
 
+        $founded = Teacher::where('user_ufba', '=', $teacher['user_ufba'])
+            ->get();
+
+        if(!$founded->isEmpty()){
+            $data['error'] = true;
+            return view('teacher.create_edit')->with($data);
+        }
+
         $response = Teacher::create($teacher)->toArray();
 
         $data['teachers'] = Teacher::all()->toArray();

@@ -19,6 +19,13 @@
                             <form role="form" action="{{ url('teacher') }}" method="POST">
                                 @endif
                                 <div class="box-body">
+                                    @if(isset($error))
+                                    <div class="alert alert-danger alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                                        Nome de usuário já está cadastrado no banco.
+                                         </div>
+                                    @endif
                                     <div class="form-group">
                                         <label for="user_ufba">Nome de usuário UFBA</label>
                                         <input type="text" class="form-control" id="user_ufba"
