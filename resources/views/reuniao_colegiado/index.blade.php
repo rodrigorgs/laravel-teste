@@ -59,7 +59,6 @@
                 <div class="">
                   <button id="btn_consultar" type="button" class="btn btn-primary">Consultar</button>
                   <input type="button" class="btn btn-success" value="Novo" onclick="window.location.href='/reuniao/colegiado/cadastro'" />
-                  <button type="clear" class="btn btn-warning">Limpar</button>
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">Excluir</button>
                 </div>
             </form>
