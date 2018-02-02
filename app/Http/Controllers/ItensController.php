@@ -25,7 +25,7 @@ class ItensController extends Controller
             ->where('discipline_id', '=', $get_discpl[0]->id)->get();
 
             //dd($get_natureza);
-        return view("Itens.itensdispensa",
+        return view("Itens.ItensDispensa",
             compact("get_discpl", "get_natureza"));
     }
     public function MostrarView(){
@@ -39,7 +39,7 @@ class ItensController extends Controller
         $itensdispensa = new ItensDispensa();
         $itensdispensa = $itensdispensa->fill($data)->toArray();
         $response = ItensDispensa::create($itensdispensa)->toArray();
-        return view('Itens.itens')->with($response);
+        return view('Itens.Itens')->with($response);
 
     }
 }
