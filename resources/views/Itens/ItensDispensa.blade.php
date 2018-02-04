@@ -7,7 +7,7 @@
 
     <div class="container">
         </form>
-        <form class="col-md-6" action="{{url('/itens/store')}}" method="post" >
+        <form class="col-md-6" action="{{url('/Itens/store')}}" method="post" >
             {{csrf_field()}}
             <br>
             <div class="row" >

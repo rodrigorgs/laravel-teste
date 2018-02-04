@@ -33,10 +33,10 @@ Route::post('reuniao/colegiado/buscar', 'ReuniaoColegiadoController@buscarReunia
 Route::get('reuniao/colegiado/cadastro', 'ReuniaoColegiadoController@exibirCadastro');
 Route::post('reuniao/colegiado/salvar', 'ReuniaoColegiadoController@salvar');
 
-Route::resource('itens', 'ItensController');
-Route::get('/itens','ItensController@MostrarView');
-Route::post('itens/store', 'ItensController@store');
-Route::post('/itens/cadastrar', 'ItensController@cadastrar');
+Route::resource('Itens', 'ItensController');
+Route::get('/Itens','ItensController@mostrarView');
+Route::post('Itens/store', 'ItensController@store');
+Route::post('/Itens/verificar', 'ItensController@verificar');
 
 Route::get('/mail', 'MailController@index');
 Route::get('/mail/enviar', 'MailController@enviarEmail');

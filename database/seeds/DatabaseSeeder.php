@@ -5,6 +5,7 @@ use App\Itens;
 use App\cursos;
 use App\cursos_disciplina;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**

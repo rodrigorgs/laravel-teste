@@ -4,14 +4,22 @@
     <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1> Cadastrar Itens </h1>
+
 </section>
 
+
     <div class="container">
-      <form class="col-md-6" action="{{url('/itens/cadastrar')}}" method="post">
+      <form class="col-md-6" action="{{url('/Itens/verificar')}}" method="post">
             {{csrf_field()}}
             <br>
             <div class="well">
-                  
+
+                @if(Session::has('message'))
+                    <div class="alert alert-success">
+                        {{ Session::get('message')}}
+                    </div>
+                @endif
+
                   <label class="control-label">Curso:</label>
                   <input type="text" class="form-control" name="curso" class="form-controll">                
                   <br> 
