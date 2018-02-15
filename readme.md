@@ -6,8 +6,8 @@ Este software será desenvolvido utilizando tecnologias Web (PHP, HTML, CSS e Ja
  
 ## Como este repositório está organizado?
  
-* Artefatos de documentação encontram-se na pasta `/doc`
-* O código-fonte encontra-se na pasta raiz e é composto por todos os arquivos e diretórios, exceto a pasta `/doc`
+* Artefatos de documentação encontram-se na pasta `/docs`
+* O código-fonte encontra-se na pasta raiz e é composto por todos os arquivos e diretórios, exceto a pasta `/docs`
 * Scripts auxiliares estão localizados na pasta `/scripts_auxiliares`
  
 ## Quem pode editar este repositório?
